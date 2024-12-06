@@ -15,6 +15,7 @@ public class CategoriaController {
     }
 
     @GetMapping
+    @CrossOrigin(origins = "*")
     public List<Categoria> obtenerCategorias() {
         return categoriaService.obtenerCategorias();
     }
