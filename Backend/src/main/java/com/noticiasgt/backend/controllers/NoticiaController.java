@@ -30,7 +30,15 @@ public class NoticiaController {
         }
         return noticia;
     }
+    //Obtener noticias por categoria
+    @GetMapping("/categoria/{categoriaId}")
+    @CrossOrigin(origins = "*")
+    public List<Noticia> obtenerNoticiasPorCategoria(@PathVariable Long categoriaId) {
+        //Si no halla noticias, retornar un array vacio
+        return noticiaService.obtenerNoticiasPorCategoria(categoriaId);
+    }
 
+    //Obtener todas las noticias
     @GetMapping
     @CrossOrigin(origins = "*")
     public List<Noticia> obtenerNoticias() {

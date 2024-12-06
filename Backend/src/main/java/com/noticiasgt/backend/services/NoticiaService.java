@@ -19,6 +19,10 @@ public class NoticiaService {
     public Noticia obtenerNoticia(Long id) {
         return noticiaRepository.findById(id).orElse(null);
     }
+    //Obtener noticias por categoria
+    public List<Noticia> obtenerNoticiasPorCategoria(Long categoriaId) {
+        return noticiaRepository.findByCategoria(categoriaId);
+    }
 
     //Obtener todas las noticias  y retornarlas como un array de objetos
     public List<Noticia> obtenerNoticias() {
